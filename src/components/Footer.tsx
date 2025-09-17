@@ -79,7 +79,7 @@ const Footer = () => {
               <span>by Premkishan Suvarnakar</span>
             </div>
             <div className="text-gray-400 text-sm">
-              © 2024 Premkishan Suvarnakar. All rights reserved.
+              © 2025 Premkishan Suvarnakar. All rights reserved.
             </div>
           </div>
         </div>

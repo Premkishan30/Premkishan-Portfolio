@@ -1,90 +1,90 @@
 import React from 'react';
-import { Award, Building, Calendar } from 'lucide-react';
+import { Building2, Award, Calendar, ExternalLink } from 'lucide-react';
 
 const Training = () => {
   const trainings = [
     {
       company: "Zensar Technologies",
       role: "Software Development Intern",
-      duration: "6 months",
-      description: "Intensive training program focusing on enterprise software development, agile methodologies, and cloud technologies. Worked on real client projects and gained hands-on experience with modern development practices.",
-      skills: ["Enterprise Software", "Agile Development", "Spring Boot", "Microservices", "AWS Cloud"],
-      icon: Building
+      duration: "June 2025 - August 2025",
+      description: "Gained hands-on experience in enterprise software development, working on real-world projects using Java, Spring Boot, and microservices architecture.",
+      skills: ["Java", "Spring Boot", "Microservices", "REST APIs", "Agile Development"],
+      type: "Industrial Training"
     },
     {
       company: "Vikramaa Technologies",
       role: "Full-Stack Development Intern",
-      duration: "4 months",
-      description: "Comprehensive internship program covering end-to-end web development. Built multiple client projects and learned industry best practices for scalable web applications.",
-      skills: ["MERN Stack", "RESTful APIs", "Database Design", "Project Management", "Client Communication"],
-      icon: Building
+      duration: "January 2023 - March 2023",
+      description: "Developed responsive web applications using MERN stack, implemented user authentication, and worked on database optimization techniques.",
+      skills: ["React.js", "Node.js", "MongoDB", "Express.js", "Authentication"],
+      type: "Industrial Training"
     }
   ];
 
   const certifications = [
     {
-      name: "AWS Educate Cloud Computing",
+      title: "AWS Educate Cloud Computing",
       issuer: "Amazon Web Services",
       date: "2023",
-      description: "Comprehensive certification covering AWS cloud services, architecture patterns, and best practices for cloud deployment."
+      description: "Comprehensive training in cloud computing fundamentals, AWS services, and cloud architecture best practices."
     },
     {
-      name: "Python for Everybody Specialization",
-      issuer: "Infosys",
+      title: "Python Programming Certification",
+      issuer: "Infosys Springboard",
       date: "2023",
-      description: "Advanced Python programming certification focusing on data structures, algorithms, and application development."
+      description: "Advanced Python programming concepts, data structures, algorithms, and application development."
     },
     {
-      name: "C++ Essentials",
-      issuer: "Scalar",
+      title: "C++ Programming Certification",
+      issuer: "Scalar Academy",
       date: "2022",
-      description: "In-depth certification covering advanced C++ concepts, object-oriented programming, and system-level programming."
+      description: "Object-oriented programming in C++, advanced data structures, and competitive programming techniques."
     }
   ];
 
   return (
-    <section id="training" className="py-20 bg-gray-50">
+    <section id="training" className="py-20 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Industrial Training & Certifications</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-teal-600 mx-auto mb-4"></div>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Professional development through industry partnerships and recognized certifications
+          <h2 className="text-4xl font-bold text-white mb-4">Training & Certifications</h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-4"></div>
+          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+            Professional development through industry training and recognized certifications
           </p>
         </div>
 
         {/* Industrial Training */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Industrial Training</h3>
-          <div className="grid md:grid-cols-2 gap-8">
+          <h3 className="text-2xl font-bold text-white mb-8 text-center">Industrial Training</h3>
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {trainings.map((training, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+                className="card-fade card-hover bg-gray-800 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-700 hover:border-gray-600"
               >
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <training.icon className="text-white" size={24} />
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Building2 className="text-white" size={24} />
                   </div>
                   <div className="flex-1">
-                    <h4 className="text-xl font-semibold text-gray-900">{training.company}</h4>
-                    <p className="text-blue-600 font-medium">{training.role}</p>
-                    <div className="flex items-center gap-1 mt-1 text-gray-500">
-                      <Calendar size={14} />
-                      <span className="text-sm">{training.duration}</span>
+                    <h4 className="text-xl font-bold text-white mb-2">{training.company}</h4>
+                    <p className="text-blue-400 font-semibold mb-2">{training.role}</p>
+                    <div className="flex items-center gap-2 text-gray-400 text-sm mb-4">
+                      <Calendar size={16} />
+                      <span>{training.duration}</span>
                     </div>
                   </div>
                 </div>
                 
-                <p className="text-gray-600 mb-4 leading-relaxed">{training.description}</p>
+                <p className="text-gray-300 mb-6 leading-relaxed">{training.description}</p>
                 
                 <div>
-                  <h5 className="text-sm font-semibold text-gray-900 mb-2">Key Skills Acquired:</h5>
+                  <h5 className="text-sm font-semibold text-purple-400 mb-3">Skills Gained:</h5>
                   <div className="flex flex-wrap gap-2">
                     {training.skills.map((skill, skillIndex) => (
                       <span
                         key={skillIndex}
-                        className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium"
+                        className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-xs font-medium hover:bg-gray-600 transition-colors"
                       >
                         {skill}
                       </span>
@@ -98,21 +98,22 @@ const Training = () => {
 
         {/* Certifications */}
         <div>
-          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Professional Certifications</h3>
-          <div className="grid md:grid-cols-3 gap-6">
+          <h3 className="text-2xl font-bold text-white mb-8 text-center">Professional Certifications</h3>
+          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {certifications.map((cert, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+                className="card-fade card-hover bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-700 hover:border-gray-600"
               >
-                <div className="w-12 h-12 bg-teal-600 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center mb-4">
                   <Award className="text-white" size={24} />
                 </div>
                 
-                <h4 className="text-lg font-semibold text-gray-900 mb-2 text-center">{cert.name}</h4>
-                <p className="text-blue-600 font-medium text-center mb-2">{cert.issuer}</p>
-                <p className="text-gray-500 text-sm text-center mb-4">{cert.date}</p>
-                <p className="text-gray-600 text-sm leading-relaxed">{cert.description}</p>
+                <h4 className="text-lg font-bold text-white mb-2">{cert.title}</h4>
+                <p className="text-green-400 font-semibold mb-2">{cert.issuer}</p>
+                <p className="text-gray-400 text-sm mb-4">{cert.date}</p>
+                
+                <p className="text-gray-300 text-sm mb-4 leading-relaxed">{cert.description}</p>
               </div>
             ))}
           </div>

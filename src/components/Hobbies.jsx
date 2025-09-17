@@ -1,80 +1,56 @@
 import React from 'react';
-import { Code, Music, BookOpen, Trophy } from 'lucide-react';
+import { Music, BookOpen, Code } from 'lucide-react';
 
 const Hobbies = () => {
   const hobbies = [
     {
-      title: "Competitive Programming",
-      description: "Regular participant on LeetCode, CodeChef, and HackerRank. Love solving algorithmic challenges and participating in coding contests.",
-      icon: Code,
-      color: "from-blue-600 to-blue-700",
-      stats: "500+ Problems Solved"
-    },
-    {
-      title: "Music & Audio",
-      description: "Passionate about music production and audio engineering. Enjoy creating electronic music and exploring sound design in my free time.",
+      title: "Listening to Music",
+      description: "Listening to music (upbeat and sad songs).",
       icon: Music,
-      color: "from-purple-600 to-purple-700",
-      stats: "Hobby Producer"
+      color: "from-purple-500 to-purple-600"
     },
     {
-      title: "Technical Reading",
-      description: "Avid reader of technical blogs, research papers, and books on emerging technologies, AI/ML, and software architecture patterns.",
+      title: "Reading Manga & Comics",
+      description: "Reading manga and comics.",
       icon: BookOpen,
-      color: "from-green-600 to-green-700",
-      stats: "Weekly Reader"
+      color: "from-green-500 to-green-600"
     },
     {
-      title: "Open Source",
-      description: "Contributing to open source projects and maintaining personal repositories. Believe in collaborative development and knowledge sharing.",
-      icon: Trophy,
-      color: "from-orange-600 to-orange-700",
-      stats: "Active Contributor"
+      title: "Coding Challenges & Hackathons",
+      description: "Solving coding challenges and participating in hackathons.",
+      icon: Code,
+      color: "from-blue-500 to-blue-600"
     }
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section id="hobbies" className="py-20 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Personal Interests</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-teal-600 mx-auto mb-4"></div>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Beyond coding, I pursue interests that fuel creativity and continuous learning
+          <h2 className="text-4xl font-bold text-white mb-4">Hobbies & Interests</h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-4"></div>
+          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+            Personal interests that fuel creativity, enhance problem-solving skills, and maintain work-life balance
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {hobbies.map((hobby, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
-            >
-              <div className={`w-14 h-14 bg-gradient-to-r ${hobby.color} rounded-xl flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300`}>
-                <hobby.icon className="text-white" size={28} />
+        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {hobbies.map((hobby, index) => {
+            const IconComponent = hobby.icon;
+            return (
+              <div
+                key={index}
+                className="card-fade card-hover bg-gray-800 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-700 hover:border-gray-600"
+              >
+                <div className={`w-16 h-16 bg-gradient-to-r ${hobby.color} rounded-xl flex items-center justify-center mb-6`}>
+                  <IconComponent className="text-white" size={32} />
+                </div>
+                
+                <h3 className="text-xl font-bold text-white mb-4">{hobby.title}</h3>
+                <p className="text-gray-300 mb-6 leading-relaxed">{hobby.description}</p>
               </div>
-              
-              <h3 className="text-xl font-semibold text-gray-900 mb-3 text-center">{hobby.title}</h3>
-              <p className="text-gray-600 text-sm leading-relaxed mb-4 text-center">{hobby.description}</p>
-              
-              <div className="text-center">
-                <span className={`inline-block px-3 py-1 bg-gradient-to-r ${hobby.color} text-white rounded-full text-xs font-medium`}>
-                  {hobby.stats}
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-16 text-center">
-          <div className="bg-white rounded-2xl p-8 shadow-lg max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Life Philosophy</h3>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              "I believe that the intersection of technology and creativity holds the key to solving tomorrow's challenges. 
-              Whether it's through code, music, or continuous learning, I strive to approach every problem with curiosity, 
-              persistence, and an open mind. Technology is not just my profession—it's my passion for making a positive impact."
-            </p>
-          </div>
+            );
+          })}
         </div>
       </div>
     </section>

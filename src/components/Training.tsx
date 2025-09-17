@@ -25,19 +25,19 @@ const Training = () => {
     {
       name: "AWS Educate Cloud Computing",
       issuer: "Amazon Web Services",
-      date: "2023",
+      date: "2025",
       description: "Comprehensive certification covering AWS cloud services, architecture patterns, and best practices for cloud deployment."
     },
     {
       name: "Python for Everybody Specialization",
       issuer: "Infosys",
-      date: "2023",
+      date: "2024",
       description: "Advanced Python programming certification focusing on data structures, algorithms, and application development."
     },
     {
       name: "C++ Essentials",
       issuer: "Scalar",
-      date: "2022",
+      date: "2023",
       description: "In-depth certification covering advanced C++ concepts, object-oriented programming, and system-level programming."
     }
   ];

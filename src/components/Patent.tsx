@@ -30,7 +30,7 @@ const Patent = () => {
                   </div>
                   <div className="flex items-center gap-2">
                     <Calendar size={16} />
-                    <span className="text-sm font-medium">Published: 2023</span>
+                    <span className="text-sm font-medium">Published: 2025</span>
                   </div>
                 </div>
               </div>
